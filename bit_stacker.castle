@@ -1,0 +1,7 @@
+---
+main: main.lua
+title: Bit Stacker
+owner: liquidream
+primaryColor: 000064
+description: A "Bits" take on that addictive arcade machine
+dimensions: 512x512
