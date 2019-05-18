@@ -15,13 +15,18 @@ function _U(dt)
     if(x<2 or x>N-p)then m=m*-1 FX(2) end
   end
   if(s==1)then
+    z=0
     for i=0,p-1 do
-     if(y~=N and G(x+i,y+1)<7)then p=p-1 FX(3) end
+     if(y~=N and G(x+i,y+1)<7)then
+      p=p-1 FX(3) 
+     else
+      z=x
+     end
     end
     if(p>0)then
       FX(5)
       if(y<2)then WIN()end      
-      w[y]={x=x,p=p} y=y-1 --t=t*.8
+      w[y]={x=z,p=p} y=y-1 --t=t*.8
     else
       DIE()
     end
