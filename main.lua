@@ -9,20 +9,19 @@ function _D()
   end
   H(y,x,x+p-1,7)
 end
-function _U(dt)
-  FX(s*4)
-
+function _U(dt)  
   c=c+1
   if(c>t)then c=0 x=x+m 
-    if(x<2 or x>N-p)then m=m*-1 end
+    if(x<2 or x>N-p)then m=m*-1 FX(2) end
   end
   if(s==1)then
     for i=0,p-1 do
-     if(y~=N and G(x+i,y+1)<7)then p=p-1 end
+     if(y~=N and G(x+i,y+1)<7)then p=p-1 FX(3) end
     end
     if(p>0)then
-      if(y<1)then WIN()end
-      w[y]={x=x,p=p} y=y-1 t=t*.8
+      FX(5)
+      if(y<2)then WIN()end      
+      w[y]={x=x,p=p} y=y-1 --t=t*.8
     else
       DIE()
     end
