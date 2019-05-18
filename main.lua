@@ -1,5 +1,5 @@
 require 'bits'
-TS,N,x,y,p,m,w=0,9,5,N,1,.05,{}
+TS,N,x,y,p,m,w,c,t=0,9,5,N,1,1,{},0,20
 function _D()
   BG(3)
   for i=1,N do
@@ -11,10 +11,11 @@ function _D()
 end
 function _U(dt)
   FX(s*4)
-  x=x+m
-  print(x.." m1="..m)
-  if(x<1.5 or x>N-p+1)then m=m*-1 end
-  print(x.." m2="..m)
+  
+  c=c+1
+  if(c>t)then c=0 x=x+m end
+  if(x<2 or x>N-p)then m=m*-1 end
+  --print(x.." m2="..m)
   if(s==1)then
     if(y==N or x>=w[y+1].x and x+p-1<=w[y+1].x+w[y+1].p-1) then
       -- perfect!
