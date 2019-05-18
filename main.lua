@@ -19,14 +19,14 @@ function _U(dt)
     for i=0,p-1 do
      if(y~=N and G(x+i,y+1)<7)then
       p=p-1 FX(3) 
-     else
-      z=x
+     elseif(z<1)then
+      z=x+i
      end
     end
     if(p>0)then
       FX(5)
       if(y<2)then WIN()end      
-      w[y]={x=z,p=p} y=y-1 --t=t*.8
+      w[y]={x=z,p=p} y=y-1 t=t*.8
     else
       DIE()
     end
