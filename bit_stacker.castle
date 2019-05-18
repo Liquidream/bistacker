@@ -2,8 +2,7 @@
 main: main.lua
 title: Bit Stacker
 owner: liquidream
-description: A "Bits" take on that addictive arcade machine 
-(created using the Bits library by Jason Riggs: https://github.com/schazers/bits)
+description: A "Bits" take on that addictive arcade machine (created using the Bits library by Jason Riggs: https://github.com/schazers/bits)
 coverImage: bit_stacker.png
 primaryColor: 36dfe1
 dimensions: 512x512
