@@ -16,14 +16,15 @@ function _U(dt)
   if(c>t)then c=0 x=x+m 
     if(x<2 or x>N-p)then m=m*-1 end
   end
-  print(x.." m2="..m)
   if(s==1)then
-    if(y==N or x>=w[y+1].x and x+p-1<=w[y+1].x+w[y+1].p-1) then
-      -- perfect!
-    else
-      -- lose life(s)
-      p=p-1
+    for i=0,p-1 do
+     if(y~=N and G(x+i,y+1)<7)then p=p-1 end
     end
-    if(p>=0) then w[y]={x=x,p=p} y=y-1 t=t*.8 end
+    if(p>0)then
+      if(y<1)then WIN()end
+      w[y]={x=x,p=p} y=y-1 t=t*.8
+    else
+      DIE()
+    end
   end
 end
